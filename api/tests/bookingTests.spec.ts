@@ -50,7 +50,7 @@ test('should be get all the booking details', async ({ request }) => {
 });
 
 test('should be get specific booking details', async ({ request }) => {
-    const response = await request.get('/booking/1');
+    const response = await request.get('/booking/4');
     console.log(await response.json());
     expect(response.ok()).toBeTruthy();
     expect(response.status()).toBe(200);
@@ -85,10 +85,8 @@ test('should be able to update the booking details', async ({ request }) => {
     console.log("New Token is: " + token);
 
  // PUT
-    const updateRequest = await request.put('/booking/1', {
-        headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
+    const updateRequest = await request.put('/booking/4', {
+        headers: {        
         'Cookie': `token=${token}`,
         },
         data: {
@@ -130,9 +128,8 @@ test('should be able to delete the booking details', async ({ request }) => {
     console.log("New Token is: " + token);
 
     // DELETE
-    const deleteRequest = await request.delete('/booking/1', {
-        headers: {
-        'Content-Type': 'application/json',
+    const deleteRequest = await request.delete('/booking/91', {
+        headers: {        
         'Cookie': `token=${token}`,
         }
     });
